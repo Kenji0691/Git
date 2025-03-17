@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
 
-double average(int score[], int numScores){
-    int sum;
-    for (int a = 1; a < numScores; a++){
+double calculateAverage(int score[], int numScores){
+    double sum;
+    for (int a = 0; a < numScores; a++){
         sum += score[a];
     }
     return sum / numScores;
 }
 
-string letterGrade(int score){
+string determineGrade(int score){
     if (score >= 90){
         return "A";
     } else if (score >= 80){
@@ -18,12 +18,11 @@ string letterGrade(int score){
         return "C";
     } else if (score >= 60){
         return "D";
-    } else{
+    } else
         return "F";
-    }
 }
 void displayResults(string name, double avg){
-    string grade = letterGrade(avg);
+    string grade = determineGrade(avg);
     cout << "student: " << name << endl;
     cout  << "Average: " << avg << endl;
     cout << "Letter Grade: " << grade << endl;
@@ -47,7 +46,7 @@ int main(){
                     cout << "Enter student scores: " << i + 1 << endl;
                     cin >> scores[i];
                 }
-                double avg = average(scores, numScores);
+                double avg = calculateAverage(scores, numScores);
                 displayResults(name, avg);
             }
     return 0;
