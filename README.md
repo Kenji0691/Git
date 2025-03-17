@@ -1,0 +1,1 @@
+This program will ask the user to enter the number of students, student name, number of scores and grade scores to calculate the average score and correlating letter grade of the student. It then outputs name, average score, and letter grade of the student.
